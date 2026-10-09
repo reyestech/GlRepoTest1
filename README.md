@@ -1,297 +1,579 @@
-# 🛡️ Blue Team Cyber Incident Investigation | Trojan Mirage
+# ⚖️ Outside Counsel Guidelines Compliance Audit | Legal Billing Analysis
 
-**SOC Investigation • Malware Analysis • Network Traffic Analysis • SIEM • Incident Response**
+**OCG Analysis • Time Entry Review • Audit Compliance • Data Analysis • Remediation • Reporting**
 
-A hands-on Blue Team security investigation of a simulated endpoint compromise involving a malicious Microsoft Word document, suspicious network connections, malicious executables, and a Remote Access Trojan (RAT).
+A simulated legal billing compliance project demonstrating how Outside Counsel Guidelines (OCGs) can be translated into actionable review criteria and applied to time entries through a structured audit and remediation workflow.
 
-The investigation focused on reconstructing the attack chain, identifying indicators of compromise (IOCs), analyzing endpoint and network activity, and determining appropriate containment and remediation actions.
+The project focuses on **guideline interpretation, compliance review, audit documentation, corrective recommendations, trend analysis, and quality control**.
 
----
-
-## 🔎 Project Overview
-
-A user reported unusual behavior on their workstation, including:
-
-- Full-screen browser activity
-- Repeated infection notifications
-- Files reported as infected
-- Modified desktop wallpaper
-- Suspicious system behavior
-
-The objective was to determine **what happened, how the compromise occurred, what systems or files were affected, and what actions should be taken to contain the threat.**
-
-![Trojan Incident](Trojan%20image.png)
+> **Portfolio Project:** This is a self-directed simulation created for skills demonstration. All clients, matters, time entries, guidelines, and audit data are fictional.
 
 ---
 
-## 🎯 Investigation Objectives
+# 📌 Business Scenario
 
-The investigation focused on answering several core incident-response questions:
+A fictional law firm manages legal matters for multiple clients with individual Outside Counsel Guidelines.
 
-1. What triggered the suspicious activity?
-2. What was the initial attack vector?
-3. Which files and processes were involved?
-4. Did the workstation communicate with suspicious external infrastructure?
-5. Was there evidence of additional network compromise?
-6. What indicators of compromise could be identified?
-7. What containment and remediation actions were required?
+One client has established billing requirements governing how attorneys and paralegals should document billable work.
 
----
+Before invoices are submitted, a sample group of time entries must be reviewed to determine whether they comply with the client's billing requirements.
 
-## 🧰 Security Tools
+The objective is to:
 
-| Tool | Investigation Use |
-|---|---|
-| **Splunk** | Log analysis, event correlation, and timeline investigation |
-| **Security Onion** | Network security monitoring and traffic investigation |
-| **Palo Alto Networks** | Firewall and network traffic analysis |
-| **Windows Endpoint Data** | File, process, download, and system activity investigation |
-| **Network Topology** | Identification of affected hosts and network relationships |
+- Interpret the client's guidelines
+- Identify potentially noncompliant entries
+- Document the applicable requirement
+- Recommend appropriate corrections
+- Verify corrected entries
+- Identify recurring compliance trends
+- Develop practical guidance for timekeepers
 
 ---
 
-## 🔗 Attack Chain
+# 🎯 Compliance Objectives
 
-The investigation connected activity across the endpoint, network, and security logs.
+This project uses the following workflow:
+
+1. **Review the Outside Counsel Guidelines**
+2. **Translate requirements into review rules**
+3. **Review individual time entries**
+4. **Identify potential compliance issues**
+5. **Document the evidence supporting each finding**
+6. **Recommend corrections**
+7. **Re-review corrected entries**
+8. **Analyze recurring findings**
+9. **Develop timekeeper guidance**
+10. **Report compliance results**
+
+---
+
+# 📂 Project Structure
 
 ```text
-Spear-Phishing Email
-        │
-        ▼
-Malicious Word Document
-        │
-        ▼
-Macro-Related Activity
-        │
-        ▼
-Malicious File Execution
-        │
-        ▼
-Reverse TCP / External Communication
-        │
-        ▼
-Remote Access Trojan (RAT)
-        │
-        ▼
-Endpoint Manipulation
-        │
-        ├── Full-screen warning messages
-        ├── Desktop wallpaper modification
-        └── Malicious process activity
+OCG-Billing-Compliance-Audit/
+│
+├── README.md
+│
+├── guidelines/
+│   └── fictional-client-ocg.md
+│
+├── data/
+│   └── sample-time-entries.csv
+│
+├── audit/
+│   ├── compliance-review.xlsx
+│   └── findings-register.md
+│
+├── analysis/
+│   └── compliance-trends.md
+│
+├── guidance/
+│   └── timekeeper-guide.md
+│
+└── reports/
+    └── compliance-summary.md
 ```
 
-This provided a working timeline for correlating events across multiple security data sources.
+---
+
+# 1️⃣ OCG Analysis
+
+The first phase of the project is converting written client requirements into actionable compliance checks.
+
+Instead of reviewing the guidelines repeatedly for every time entry, I created a structured rules matrix.
+
+## Sample OCG Rules Matrix
+
+| Rule ID | Category | Requirement | Review Question |
+|---|---|---|---|
+| OCG-001 | Narrative | Entries must clearly describe the work performed | Can the reviewer understand the activity from the narrative? |
+| OCG-002 | Documentation | Required supporting information must be included | Is the required information present? |
+| OCG-003 | Billing Restriction | Restricted activities require additional review | Does the activity conflict with the client's billing rules? |
+| OCG-004 | Narrative | Entries must provide sufficient detail | Does the entry explain what work was performed? |
+| OCG-005 | Consistency | Entries must follow applicable client requirements | Is the entry consistent with the applicable guideline? |
+
+The goal is to transform:
+
+```text
+Outside Counsel Guidelines
+          │
+          ▼
+Identify Requirements
+          │
+          ▼
+Categorize Rules
+          │
+          ▼
+Create Review Criteria
+          │
+          ▼
+Apply Rules Consistently
+```
 
 ---
 
-# 🔬 Investigation
+# 2️⃣ Time Entry Review
 
-## 1. Initial Endpoint Analysis
+Each fictional time entry is reviewed against the applicable client guideline.
 
-The investigation began by reviewing the affected workstation and examining the reported infection behavior.
+## Review Method
 
-![Infected Files](files.png)
+For each entry, I evaluate:
 
-![Warning Message](warning%20message.png)
+**1. What work is being described?**
 
-Recent downloads and system changes were examined to identify activity surrounding the incident.
+**2. Which OCG requirement applies?**
 
-The investigation identified activity associated with an email and downloaded Word document. Timestamps and related events were then cross-referenced to establish the sequence of activity.
+**3. Does the entry satisfy that requirement?**
 
-![Message Investigation](message.png)
+**4. If not, what specifically is missing or unclear?**
 
----
-
-## 2. Network Analysis
-
-The network topology was reviewed to understand the workstation's connections and identify communications requiring further investigation.
-
-![Network Topology](network%20topology.png)
-
-This helped connect endpoint activity with network-level evidence and identify external IP addresses associated with the incident.
+**5. What correction would address the finding?**
 
 ---
 
-## 3. SIEM Investigation with Splunk
+# 🔎 Sample Review
 
-Splunk was used to investigate event data and correlate activity surrounding the suspected compromise.
+### Original Entry
 
-The analysis focused on:
+**Entry ID:** TE-001
 
-- Suspicious process activity
-- Network connections
-- File activity
-- Event timestamps
-- Relationships between endpoint and network events
+> Reviewed documents.
 
-![Splunk Investigation](splunk.png)
+### Finding
 
-![Splunk Event Analysis](Splunk%202.png)
+**Potentially Noncompliant**
 
----
+### Applicable Rule
 
-## 4. Network Security Monitoring with Security Onion
+**OCG-004: Narrative Detail**
 
-Security Onion was used to investigate network activity associated with the compromised workstation.
+### Analysis
 
-The analysis helped correlate network traffic with events identified during the endpoint and Splunk investigation.
+The narrative describes a general activity but does not provide enough information to understand what work was performed without additional context.
 
-![Security Onion Investigation](Security%20onion.png)
+### Recommended Correction
 
-![Security Onion Network Analysis](Security%20onion2.png)
+> Reviewed case documentation in preparation for matter analysis.
 
----
+### Validation
 
-## 5. Firewall Investigation
+The revised entry provides additional context while remaining concise.
 
-Palo Alto Networks firewall data was reviewed to analyze communications associated with the affected workstation and suspicious external IP addresses.
+### Status
 
-![Palo Alto Network Investigation](palo%20alto%20network.png)
-
-![Palo Alto Firewall Analysis](palo%20alto%202.png)
-
-Firewall evidence was compared with findings from Splunk and Security Onion to build a broader picture of the incident.
+✅ **Corrected / Ready for Re-review**
 
 ---
 
-# 🦠 Malware Analysis
+# 3️⃣ Compliance Findings Register
 
-The investigation identified activity associated with a Word document containing macro-related functionality capable of triggering additional malicious activity.
+Every potential compliance issue is documented so that the decision can be traced back to the applicable requirement.
 
-Analysis connected the document with:
-
-- Reverse TCP communication
-- Downloaded executable files
-- Suspicious process execution
-- A malicious executable masquerading as a Splunk forwarder
-- Additional spawned processes
-- Remote Access Trojan behavior
-
-![Malware Finding](information%20-%20finding.png)
-
-Rather than relying on a single alert, evidence from multiple sources was correlated to understand the relationship between the document, malicious processes, and network activity.
+| Entry | Rule | Finding | Risk | Action | Status |
+|---|---|---|---|---|---|
+| TE-001 | OCG-004 | Insufficient narrative detail | Audit exposure | Clarify activity | Corrected |
+| TE-002 | OCG-001 | No issue identified | None identified | No action | Compliant |
+| TE-003 | OCG-002 | Supporting information missing | Audit exposure | Add documentation | Open |
+| TE-004 | OCG-003 | Potential billing restriction | Audit exposure | Review against rule | Review Required |
+| TE-005 | OCG-004 | Narrative requires clarification | Audit exposure | Revise narrative | Corrected |
 
 ---
 
-# 🚨 Key Findings
+# 4️⃣ Compliance Decision Process
 
-The investigation identified several important security findings:
+I used a repeatable decision process so findings would be evaluated consistently.
 
-- A malicious Word document was associated with the initial compromise.
-- The activity originated from a targeted phishing scenario.
-- Macro-related activity contributed to the malicious execution chain.
-- Suspicious executable files were identified on the affected system.
-- Reverse TCP communication was associated with the malicious activity.
-- A Remote Access Trojan was disguised as a Splunk-related executable.
-- Two suspicious external IP addresses were identified.
-- Firewall logs were reviewed for evidence of additional movement or compromise.
-- The available evidence did not identify further internal compromise.
+```text
+                  TIME ENTRY
+                      │
+                      ▼
+             Identify Applicable OCG
+                      │
+                      ▼
+                 Review Entry
+                      │
+              ┌───────┴────────┐
+              │                │
+              ▼                ▼
+          COMPLIANT       POSSIBLE ISSUE
+              │                │
+              ▼                ▼
+           Approve        Identify Rule
+                               │
+                               ▼
+                         Document Finding
+                               │
+                               ▼
+                      Recommend Correction
+                               │
+                               ▼
+                           Re-review
+                          ┌────┴────┐
+                          │         │
+                          ▼         ▼
+                        PASS       FAIL
+                          │         │
+                          ▼         ▼
+                        Close     Return
+```
+
+The purpose of the workflow is to make the compliance decision **repeatable, documented, and traceable to the governing requirement**.
 
 ---
 
-# 🛡️ Incident Response and Remediation
+# 5️⃣ Remediation
 
-Based on the investigation, the response actions included:
+Identifying the problem is only part of the audit process.
 
-### Containment
-- Block identified malicious external IP addresses.
-- Remove malicious files from the affected workstation.
-- Remove the malicious Word document and RAT-associated files.
+Each finding should result in an actionable next step.
 
-### Investigation
-- Correlate endpoint, SIEM, network-monitoring, and firewall evidence.
-- Document the incident timeline.
-- Review suspicious executable activity.
-- Investigate network activity for evidence of additional compromise.
+## Example
 
-### Prevention
-- Reinforce phishing and untrusted-download awareness.
-- Review lessons learned from the incident.
-- Evaluate security controls and policies that could reduce similar risks.
+### Finding
+
+Time entry does not contain sufficient narrative detail.
+
+### Requirement
+
+OCG-004
+
+### Remediation
+
+Request additional context and revise the narrative.
+
+### Validation
+
+Re-review the corrected narrative against OCG-004.
+
+### Result
+
+```text
+Finding
+   ↓
+Requirement
+   ↓
+Correction
+   ↓
+Re-review
+   ↓
+Resolution
+```
+
+This creates a documented path from the original finding through closure.
+
+---
+
+# 6️⃣ Quality Control
+
+Before closing a compliance finding, I would verify:
+
+- The correct OCG requirement was applied
+- The original issue was documented
+- The recommended correction addressed that issue
+- The revised entry was reviewed against the same requirement
+- The final disposition was recorded
+- Supporting documentation was retained where applicable
+
+The objective is not simply to "fix the entry."
+
+The objective is to maintain a defensible record showing **why it was flagged, what requirement applied, what changed, and why the corrected entry passed review.**
+
+---
+
+# 7️⃣ Audit Trend Analysis
+
+Individual findings can also reveal broader compliance patterns.
+
+I categorized findings so recurring issues could be identified.
+
+## Example Categories
+
+```text
+Audit Findings
+     │
+     ├── Narrative Clarity
+     │
+     ├── Documentation
+     │
+     ├── Billing Restrictions
+     │
+     ├── Guideline Interpretation
+     │
+     └── Other
+```
+
+This allows compliance review to move from:
+
+**correcting individual entries**
+
+to:
+
+**identifying recurring behaviors that may require additional guidance.**
+
+---
+
+# 📊 Compliance Metrics
+
+The simulated tracking model monitors:
+
+- Total entries reviewed
+- Entries passing initial review
+- Entries requiring correction
+- Open findings
+- Corrected findings
+- Findings by rule
+- Findings by category
+- Repeat finding categories
+
+These measures could be used to identify patterns and determine where additional guidance may be beneficial.
+
+---
+
+# 8️⃣ Targeted Timekeeper Guidance
+
+Audit findings are more valuable when they improve future behavior.
+
+I created a simplified guidance document translating the fictional OCG requirements into practical instructions.
+
+## Clear Narratives
+
+Write descriptions that allow another reviewer to understand the work performed without needing to infer the activity.
+
+## Client-Specific Requirements
+
+Review the requirements applicable to the client and matter before submitting time.
+
+## Documentation
+
+Include supporting information when required by the applicable guideline.
+
+## Self-Review
+
+Before submission, verify that:
+
+- The activity is clearly described
+- Required information is included
+- Client restrictions have been considered
+- The narrative is accurate and concise
+
+---
+
+# 9️⃣ Guideline Change Management
+
+Compliance requirements may change.
+
+For the simulation, I designed the following update process:
+
+```text
+Updated OCG Received
+        │
+        ▼
+Compare Requirements
+        │
+        ▼
+Identify Changed Rules
+        │
+        ▼
+Update Rules Matrix
+        │
+        ▼
+Update Timekeeper Guide
+        │
+        ▼
+Communicate Changes
+        │
+        ▼
+Monitor Future Findings
+```
+
+This prevents an updated requirement from remaining only in the source document without being incorporated into the review process.
+
+---
+
+# 🔟 Compliance Reporting
+
+The final phase is communicating results clearly to stakeholders.
+
+A compliance summary should answer:
+
+### What was reviewed?
+
+The population of time entries included in the audit.
+
+### What was identified?
+
+The compliance findings discovered during review.
+
+### Why were entries flagged?
+
+The OCG requirements supporting each finding.
+
+### What needs action?
+
+Open corrections and items requiring additional review.
+
+### What has been resolved?
+
+Findings that passed follow-up review.
+
+### Are patterns emerging?
+
+Repeated types of compliance findings that may benefit from targeted guidance.
 
 ---
 
 # 🧠 Skills Demonstrated
 
-### Security Operations
-- Security incident investigation
-- Incident response
-- Alert triage
-- Event correlation
-- Timeline reconstruction
-- Indicator of compromise identification
+### Compliance & Audit
 
-### SIEM & Log Analysis
-- Splunk
-- Log investigation
-- Event analysis
-- Cross-source correlation
+- Compliance review
+- Policy interpretation
+- Requirement analysis
+- Audit support
+- Finding documentation
+- Evidence-based review
+- Corrective action tracking
+- Quality assurance
 
-### Network Security
-- Network traffic analysis
-- Security Onion
-- Firewall log analysis
-- Palo Alto Networks
-- IP investigation
-- Reverse TCP analysis
+### Outside Counsel Guidelines
 
-### Endpoint & Malware Investigation
-- Malicious document analysis
-- Suspicious process investigation
-- Remote Access Trojan investigation
-- Malicious executable identification
-- Attack-chain reconstruction
+- OCG analysis
+- Requirement extraction
+- Rules mapping
+- Client-specific guidance
+- Compliance documentation
+- Change tracking
 
-### Threat Investigation
-- Phishing investigation
-- IOC analysis
-- Network and endpoint correlation
-- Containment and remediation planning
+### Data Analysis
+
+- Structured data review
+- Finding categorization
+- Trend analysis
+- Compliance metrics
+- Reporting
+
+### Communication
+
+- Written findings
+- Corrective recommendations
+- Timekeeper guidance
+- Stakeholder reporting
+- Clear business writing
+
+### Process Improvement
+
+- Repeatable review workflows
+- Rules standardization
+- Finding classification
+- Remediation verification
+- Lessons learned
 
 ---
 
-# 📊 Investigation Summary
+# 📈 End-to-End Workflow
 
-| Category | Finding |
-|---|---|
-| **Attack Vector** | Targeted phishing / malicious Word document |
-| **Endpoint** | User workstation |
-| **Malware Behavior** | Remote Access Trojan activity |
-| **Network Activity** | Reverse TCP / suspicious external communication |
-| **SIEM** | Splunk |
-| **Network Monitoring** | Security Onion |
-| **Firewall Analysis** | Palo Alto Networks |
-| **Primary Evidence** | Endpoint, process, log, and network activity |
-| **Response** | IOC blocking, malicious-file removal, documentation, prevention recommendations |
+```text
+        OUTSIDE COUNSEL GUIDELINES
+                    │
+                    ▼
+          REQUIREMENT ANALYSIS
+                    │
+                    ▼
+             RULES MATRIX
+                    │
+                    ▼
+             TIME ENTRIES
+                    │
+                    ▼
+           COMPLIANCE REVIEW
+                    │
+          ┌─────────┴─────────┐
+          │                   │
+          ▼                   ▼
+      COMPLIANT           NONCOMPLIANT
+          │                   │
+          ▼                   ▼
+       APPROVE              FINDING
+                              │
+                              ▼
+                         REMEDIATION
+                              │
+                              ▼
+                          RE-REVIEW
+                              │
+                       ┌──────┴──────┐
+                       ▼             ▼
+                     PASS           FAIL
+                       │             │
+                       ▼             ▼
+                     CLOSE        FOLLOW-UP
+                       │
+                       ▼
+                  TREND ANALYSIS
+                       │
+                       ▼
+              TIMEKEEPER GUIDANCE
+```
+
+---
+
+# 💼 Role Alignment
+
+This project demonstrates foundational capability relevant to a Time Entry & Compliance Analyst role:
+
+**OCG Analysis**  
+Translate written client requirements into actionable review criteria.
+
+**Time Entry Review**  
+Apply defined requirements consistently to billing narratives.
+
+**Audit Analysis**  
+Identify and document potential compliance findings.
+
+**Remediation**  
+Recommend corrections tied directly to the governing requirement.
+
+**Quality Control**  
+Re-review corrected entries before closing findings.
+
+**Trend Analysis**  
+Categorize findings to identify recurring issues.
+
+**Guidance**  
+Translate audit findings into practical timekeeper guidance.
+
+**Reporting**  
+Present findings, open actions, resolutions, and trends clearly to stakeholders.
 
 ---
 
 # 💡 What I Learned
 
-This project strengthened my ability to approach a security incident from a Blue Team perspective rather than treating individual security alerts independently.
+The most important lesson from this project was that compliance review is not simply deciding whether something is right or wrong.
 
-The most valuable part of the investigation was correlating multiple sources of evidence:
+A defensible compliance process connects every decision back to a requirement:
 
-**endpoint activity → process execution → SIEM events → network traffic → firewall data**
+**Requirement → Review → Finding → Evidence → Correction → Validation → Closure**
 
-This helped me practice building an incident timeline, identifying IOCs, tracing an attack chain, validating the scope of suspicious activity, and developing appropriate containment and remediation recommendations.
+I also learned the importance of analyzing findings collectively.
 
----
+A single noncompliant entry may require correction.
 
-## 🏆 Certificate
-
-Certificate earned after completing the investigation:
-
-![Certificate](certificate%20earned%20.png)
+Repeated findings may indicate a process, communication, or training opportunity.
 
 ---
 
-## 🔐 Cybersecurity Focus
+# 🎯 Core Skills
 
-This project demonstrates hands-on experience relevant to:
-
-`SOC Analyst` • `Security Operations` • `Cybersecurity Analyst` • `Incident Response` • `Blue Team` • `SIEM` • `Network Security` • `Threat Detection`
+`Compliance Analysis` • `Outside Counsel Guidelines` • `Time Entry Review` • `Audit Review` • `Policy Interpretation` • `Finding Documentation` • `Remediation Tracking` • `Quality Control` • `Trend Analysis` • `Data Analysis` • `Reporting` • `Stakeholder Communication`
 
 ---
 
-> **Note:** This repository documents a simulated cybersecurity training environment. The systems, malware activity, and incident investigation shown here were performed for authorized educational and defensive-security purposes.
+# ⚠️ Project Disclaimer
+
+This repository is a **self-directed simulated portfolio project** created to demonstrate compliance-review, data-analysis, documentation, and policy-interpretation skills.
+
+All clients, matters, Outside Counsel Guidelines, time entries, audit findings, and billing information are fictional.
+
+This project does not represent employment with a law firm, professional legal billing experience, or production experience with Elite 3E or Laurel.
